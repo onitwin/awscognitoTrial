@@ -1,0 +1,9 @@
+{
+	"auth": {
+		"logintest99a2430d99a2430d": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}

@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Amplify, { Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+import {withAuthenticator,AmplifySignOut} from '@aws-amplify/ui-react'
+Amplify.configure(awsconfig);
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+    <h1>START</h1>
+    <p>The Javascript code on this page is constructed using templates from Amazon that automatically</p>
+    <p>render the requisite log in/out features. If log in is successful,everything between start and end renders </p>
+     <AmplifySignOut />
+     <h1>END</h1>
+
     </div>
   );
 }
 
-export default App;
+export default withAuthenticator(App);
